@@ -9,6 +9,3 @@ Developer: Jakob Alokones
 Developer: Gavin Williams
 Developer: Mahir Ishtiaq
 
-
-Documentation is viewable at https://aaron16639.github.io/IS247-Group-Project/
-
