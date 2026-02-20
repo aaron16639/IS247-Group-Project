@@ -1,10 +1,14 @@
-Group 4
+**Group Name**: ERP Group
 
-Project Description: TBA
+**Project Description**: This is a second-generation ERP system built for businesses and includes modules like finance, HR, Supply Chain Management (SCM), and more. The problems that this solves for small businesses is that they need a system that helps them organize all their businesses information in order to improve effiencies in operations.
 
-Roles:
+**Roles**:
 Developer: Aaron Saudager
 Developer: Saunders Ebuwei
 Developer: Jakob Alokones
 Developer: Gavin Williams
 Developer: Mahir Ishtiaq
+
+
+Documentation is viewable at https://aaron16639.github.io/IS247-Group-Project/
+
