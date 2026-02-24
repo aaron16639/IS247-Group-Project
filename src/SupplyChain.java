@@ -3,35 +3,37 @@ public class SupplyChain{
 public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-    System.out.print("length: ");
+    System.out.print("Length: ");
     int a = scanner.nextInt();
 
-    System.out.print("width: ");
+    System.out.print("Width: ");
     int b = scanner.nextInt();
 
-    System.out.print("height: ");
+    System.out.print("Height: ");
     int c = scanner.nextInt();
 
-    System.out.println("Area of package ordered: " + (a * b * c));
+    int area = a + b + c;
+
+    System.out.println("Area of package ordered: " + area);
 
 
-    if ((a * b * c) > 300) {
+    if (area > 300) {
         System.out.println("Size doesn't exist for product package");
 }
-    else if ((a * b * c) <= 300 && (a * b *c) > 250) {
-        System.out.println("Size of product package is XL");
+    else if (area <= 300 && area > 250) {
+        System.out.println("Size of product package is Extra Large");
     }
-    else if ((a * b * c) <= 250 && (a * b * c) > 200){
-        System.out.println("Size of product package is L");
+    else if (area <= 250 && area > 200) {
+        System.out.println("Size of product package is Large");
     }
-    else if ((a * b * c) <= 200 && (a * b * c) > 150) {
-        System.out.println("Size of product package is M");
+    else if (area <= 200 && area > 150) {
+        System.out.println("Size of product package is Medium");
     }
-    else if ((a * b * c) <= 150 && (a * b * c) > 100) {
-        System.out.println("Size of product package is S");
+    else if (area <= 150 && area > 100) {
+        System.out.println("Size of product package is Small");
     }
-    else if ((a * b * c) <= 100 && (a * b * c) > 50) {
-        System.out.println("Size of product package is XS");
+    else if (area <= 100 && area > 50) {
+        System.out.println("Size of product package is Extra Small");
     }
     else{
         System.out.println("Size doesn't exist for product package");
