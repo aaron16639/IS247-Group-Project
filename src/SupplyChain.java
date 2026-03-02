@@ -19,20 +19,20 @@ public static void main(String[] args) {
 
     if (area > 300) {
         System.out.println("Size doesn't exist for product package");
-}
-    else if (area <= 300 && area > 250) {
+    }
+    else if (area > 250) {
         System.out.println("Size of product package is Extra Large");
     }
-    else if (area <= 250 && area > 200) {
+    else if (area > 200) {
         System.out.println("Size of product package is Large");
     }
-    else if (area <= 200 && area > 150) {
+    else if (area > 150) {
         System.out.println("Size of product package is Medium");
     }
-    else if (area <= 150 && area > 100) {
+    else if (area > 100) {
         System.out.println("Size of product package is Small");
     }
-    else if (area <= 100 && area > 50) {
+    else if (area > 50) {
         System.out.println("Size of product package is Extra Small");
     }
     else{
