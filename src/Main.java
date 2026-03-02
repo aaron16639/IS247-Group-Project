@@ -5,9 +5,16 @@ import SimpleCalculator.Subtract;
 
 public class Main {
     public static void main(String[] args) {
-        Add.add(1, 2);
-        Multiplication.multiply(4, 4);
-        Square.square(2);
-        Subtract.subtract(10, 5);
+        // Values
+        int sum = Add.add(1, 2);
+        int product = Multiplication.multiply(4, 4);
+        int squared = Square.square(2);
+        int difference = Subtract.subtract(10, 5);
+
+        // Printouts
+        System.out.println("Addition: " + sum);
+        System.out.println("Product: " + product);
+        System.out.println("Squared: " squared);
+        System.out.println("Difference: " + difference);
     }
 }
