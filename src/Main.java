@@ -14,7 +14,7 @@ public class Main {
         // Printouts
         System.out.println("Addition: " + sum);
         System.out.println("Product: " + product);
-        System.out.println("Squared: " squared);
+        System.out.println("Squared: " + squared);
         System.out.println("Difference: " + difference);
     }
 }
