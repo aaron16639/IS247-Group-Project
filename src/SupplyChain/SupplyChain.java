@@ -6,15 +6,15 @@ public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
     System.out.print("Length: ");
-    int a = scanner.nextInt();
+    int length = scanner.nextInt();
 
     System.out.print("Width: ");
-    int b = scanner.nextInt();
+    int width = scanner.nextInt();
 
     System.out.print("Height: ");
-    int c = scanner.nextInt();
+    int height = scanner.nextInt();
 
-    int area = a + b + c;
+    int area = length + width + height;
 
     System.out.println("Area of package ordered: " + area);
 
