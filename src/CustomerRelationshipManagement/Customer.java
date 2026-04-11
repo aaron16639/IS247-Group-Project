@@ -2,7 +2,7 @@
 
 package CustomerRelationshipManagement;
 
-public class CRM {
+public class Customer {
 
     private String customerID; //String for the Type of customer ID
     private String name;  //String for name of customer
@@ -12,8 +12,8 @@ public class CRM {
     private String TypeOfCustomer; //String holds what type of customer
 
     //Constructor
-    public CRM( String customerID, String name, String email, String PNUM, String address
-    ,String TypeOfCustomer){
+    public Customer(String customerID, String name, String email, String PNUM, String address
+    , String TypeOfCustomer){
         this.customerID = customerID;
         this.name = name;
         this.email = email;
@@ -69,9 +69,5 @@ public class CRM {
         System.out.println("Customer Email: " + email);
         System.out.println("Customer Phone Number " + PNUM);
         System.out.println("Customer Address: " + address);
-
-
-
-
    }
 }
