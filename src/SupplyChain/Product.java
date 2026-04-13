@@ -11,43 +11,44 @@ public class Product {
 
         int area = length * width * height;
 
-        System.out.println("Area of package ordered: " + area);
+        if (sizeCheck(area)) {
+            System.out.println("Area of package ordered: " + area);
 
-        if (area > 300) {
+            this.length = length;
+            this.width = width;
+            this.height = height;
+        } else {
+            //TODO Create custom exception
+            // Dependency injection
             throw new IllegalArgumentException("Size doesn't exist for product package");
+        }
+    }
+    public boolean sizeCheck(int area) {
+        if (area > 300) {
+            return false;
         }
         else if (area > 250) {
             System.out.println("Size of product package is Extra Large");
-            this.length = length;
-            this.width = width;
-            this.height = height;
+            return true;
         }
         else if (area > 200) {
             System.out.println("Size of product package is Large");
-            this.length = length;
-            this.width = width;
-            this.height = height;
+            return true;
         }
         else if (area > 150) {
             System.out.println("Size of product package is Medium");
-            this.length = length;
-            this.width = width;
-            this.height = height;
+            return true;
         }
         else if (area > 100) {
             System.out.println("Size of product package is Small");
-            this.length = length;
-            this.width = width;
-            this.height = height;
+            return true;
         }
         else if (area > 50) {
             System.out.println("Size of product package is Extra Small");
-            this.length = length;
-            this.width = width;
-            this.height = height;
+            return true;
         }
         else {
-            throw new IllegalArgumentException("Size doesn't exist for product package");
+            return false;
         }
     }
 }
