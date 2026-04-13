@@ -7,17 +7,17 @@ public class Customer {
     private String customerID; //String for the Type of customer ID
     private String name;  //String for name of customer
     private String email; //String for customer email
-    private String PNUM; //String holds customers phone number
+    private String PhoneNumber; //String holds customers phone number
     private String address; //Holds the address of the customer
     private String TypeOfCustomer; //String holds what type of customer
 
     //Constructor
-    public Customer(String customerID, String name, String email, String PNUM, String address
+    public Customer(String customerID, String name, String email, String PhoneNumber, String address
     , String TypeOfCustomer){
         this.customerID = customerID;
         this.name = name;
         this.email = email;
-        this.PNUM = PNUM;
+        this.PhoneNumber = PhoneNumber;
         this.address = address;
         this.TypeOfCustomer = TypeOfCustomer;
     }
@@ -32,8 +32,8 @@ public class Customer {
     public String getEmail(){
         return email;
     }
-    public String getPNUM(){
-        return PNUM;
+    public String getPhoneNumber(){
+        return PhoneNumber;
     }
     public String getAddress(){
         return address;
@@ -52,8 +52,8 @@ public class Customer {
     public void setEmail(){
         this.email = email;
     }
-    public void setPNUM(){
-        this.PNUM = PNUM;
+    public void setPhoneNumber(){
+        this.PhoneNumber = PhoneNumber;
     }
     public void setAddress(){
         this.address = address;
@@ -67,7 +67,7 @@ public class Customer {
         System.out.println("Customer ID: " + customerID);
         System.out.println("Customer Name: " + name);
         System.out.println("Customer Email: " + email);
-        System.out.println("Customer Phone Number " + PNUM);
+        System.out.println("Customer Phone Number " + PhoneNumber);
         System.out.println("Customer Address: " + address);
    }
 }
