@@ -1,4 +1,5 @@
 package SupplyChain;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Product {
@@ -6,9 +7,9 @@ public class Product {
     private final int width;
     private final int height;
 
-    public Product(int length, int width, int height) {
-        Scanner scanner = new Scanner(System.in);
+    public Scanner scanner = new Scanner(System.in);
 
+    public Product(int length, int width, int height) {
         int area = (int)calculateArea(length, width, height);
 
         if (sizeCheck(area)) {
@@ -61,6 +62,31 @@ public class Product {
         }
         else {
             return false;
+        }
+    }
+
+    public String printProductDetails() {
+        try {
+            System.out.print("Length: ");
+            double a = scanner.nextDouble();
+
+            System.out.print("Width: ");
+            double b = scanner.nextDouble();
+
+            System.out.print("Height: ");
+            double c = scanner.nextDouble();
+
+            double area = Product.calculateArea(a, b, c);
+            System.out.println("Area of package orderd: " + area);
+
+            // Dimensions.printSize(area);
+
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid Input");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            scanner.close();
         }
     }
 }
