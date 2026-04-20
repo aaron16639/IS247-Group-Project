@@ -88,6 +88,6 @@ public class Product {
         } finally {
             scanner.close();
         }
-        return "okay";
+        return "The area is: ";
     }
 }
