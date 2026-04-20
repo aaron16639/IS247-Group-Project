@@ -43,24 +43,20 @@ public class Customer {
     }
 
     //setters
-    public void setCustomerID(){
+    public void setCustomerID( String customerID ){
         this.customerID = customerID;
     }
-    public void setName(){
+    public void setName(String name ){
         this.name = name;
     }
-    public void setEmail(){
-        this.email = email;
-    }
-    public void setPhoneNumber(){
+    public void setEmail(String email){this.email = email;}
+    public void setPhoneNumber(String PhoneNumber){
         this.PhoneNumber = PhoneNumber;
     }
-    public void setAddress(){
+    public void setAddress(String address){
         this.address = address;
     }
-    public void setTypeOfCustomer(){
-        this.TypeOfCustomer = TypeOfCustomer;
-    }
+    public void setTypeOfCustomer(String TypeOfCustomer){this.TypeOfCustomer = TypeOfCustomer;}
 
     //Prints out the customers information
    public void PrintInfo(){
@@ -70,4 +66,7 @@ public class Customer {
         System.out.println("Customer Phone Number " + PhoneNumber);
         System.out.println("Customer Address: " + address);
    }
+
+   //if the type of customer is missing it will show up as "Unspecified"
+
 }
