@@ -1,4 +1,8 @@
+import CustomerRelationshipManagement.CRMSystem;
+import Finance.FinanceSystem;
+import HumanResources.HRSystem;
 import SupplyChain.Product;
+import SupplyChain.SCMSystem;
 
 import java.util.Scanner;
 
@@ -7,29 +11,53 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Welcome to the ERP system. Please select a choice:");
-        printOptions();
-        int choice = input.nextInt();
+        CRMSystem crmSystem = new CRMSystem();
+        FinanceSystem financeSystem = new FinanceSystem();
+        HRSystem hrSystem = new HRSystem();
+        SCMSystem scmSystem = new SCMSystem();
 
-        if (choice == 1) {
-            System.out.println("You have chosen choice 1");
-        } else if (choice == 2) {
-            System.out.println("You have chosen choice 2");
-        } else if (choice == 3) {
-            System.out.println("You have chosen choice 3");
-        } else if (choice == 4) {
-            System.out.println("You have chosen choice 4");
-        }
+        int choice;
+
+        do {
+            printOptions();
+            choice = input.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("\n--- Redirecting to Customer Relationship Management (CRM) System ---");
+                    // TODO: Start CRM system using CRMSystem.start();
+                    break;
+                case 2:
+                    System.out.println("\n--- Redirecting to Finance System ---");
+                    // TODO: FinanceSystem.start();
+                    break;
+                case 3:
+                    System.out.println("\n--- Redirecting to Human Resources (HR) System ---");
+                    hrSystem.start();
+                    break;
+                case 4:
+                    System.out.println("\n--- Redirecting to Supply Chain Management (SCM) System ---");
+                    // TODO: SCM.start();
+                    break;
+                case 0:
+                    System.out.println("Exiting ERP System. Goodbye!");
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+        } while (choice != 0);
 
         input.close();
-
     }
 
 
     public static void printOptions() {
-        System.out.println("1. CRM");
-        System.out.println("2. Finance");
-        System.out.println("3. Human Resources");
-        System.out.println("4. Supply Chain");
+        System.out.println("\n===== ERP System Main Menu =====");
+        System.out.println("1. CRM System");
+        System.out.println("2. Finance System ");
+        System.out.println("3. HR System");
+        System.out.println("4. Supply Chain System ");
+        System.out.println("0. Exit");
+        System.out.print("Enter your choice: ");
     }
 }
