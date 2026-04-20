@@ -4,8 +4,7 @@ package Finance;
 
 import java.time.LocalDate;
 
-public class Invoice extends Transaction {
-
+public abstract class Invoice extends Transaction {
     private String vendor;
     private LocalDate dueDate;
     private boolean paid;

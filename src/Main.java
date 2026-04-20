@@ -1,7 +1,6 @@
 import CustomerRelationshipManagement.CRMSystem;
 import Finance.FinanceSystem;
 import HumanResources.HRSystem;
-import SupplyChain.Product;
 import SupplyChain.SCMSystem;
 
 import java.util.Scanner;
