@@ -1,5 +1,4 @@
 import SupplyChain.Product;
-import CustomerRelationshipManagement.Customer;
 
 import java.util.Scanner;
 
