@@ -88,5 +88,7 @@ public class Product {
         } finally {
             scanner.close();
         }
+        return "-1";
     }
+
 }

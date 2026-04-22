@@ -25,5 +25,20 @@ public class Invoice extends Transaction {
 
     public void markAsPaid(boolean paid) { this.paid = true; }
 
-    //still need to write the overrides for process transaction and get details
+    @Override
+    public void processTransaction() {
+        if (isPaid()) {
+            System.out.println("Invoice " + getTransactionId() + " has already been paid.");
+        } else if (LocalDate.now().isAfter(dueDate)) {
+            System.out.println("WARNING: Invoice " + getTransactionId() + " from " + vendor + " is OVERDUE!");
+        } else {
+            System.out.println("Invoice " + getTransactionId() + " from " + vendor + " is due on " + dueDate + ". Amount: $" + getAmount());
+        }
+    }
+
+    @Override
+    public String getDetails() {
+        return super.getDetails() + " | Vendor: " + vendor + " | Due: " + dueDate + " | Paid: " + isPaid();
+    }
+
 }
