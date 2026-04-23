@@ -7,12 +7,12 @@ public class Product {
     private final int width;
     private final int height;
 
-    public Scanner scanner = new Scanner(System.in);
-
     public Product(int length, int width, int height) {
         int area = (int)calculateArea(length, width, height);
 
-        if (sizeCheck(area)) {
+        boolean valid = sizeCheck(area);
+
+        if (valid) {
             System.out.println("Area of package ordered: " + area);
 
             this.length = length;
@@ -24,7 +24,6 @@ public class Product {
             throw new IllegalArgumentException("Size doesn't exist for product package");
         }
     }
-
     public static <T extends Number> double calculateArea(T a, T b, T c) {
         double length = a.doubleValue();
         double width = b.doubleValue();
@@ -36,36 +35,39 @@ public class Product {
         return length * width * height;
     }
 
-    public boolean sizeCheck(int area) {
+    public static boolean sizeCheck(int area) {
         if (area > 300) {
             return false;
         }
         else if (area > 250) {
-            System.out.println("Size of product package is Extra Large");
+            System.out.println("Size of product package is Extra Large and");
             return true;
+
         }
         else if (area > 200) {
-            System.out.println("Size of product package is Large");
+            System.out.println("Size of product package is Large and");
             return true;
         }
         else if (area > 150) {
-            System.out.println("Size of product package is Medium");
+            System.out.println("Size of product package is Medium and");
             return true;
         }
         else if (area > 100) {
-            System.out.println("Size of product package is Small");
+            System.out.println("Size of product package is Small and");
             return true;
         }
         else if (area > 50) {
-            System.out.println("Size of product package is Extra Small");
+            System.out.println("Size of product package is Extra Small and");
             return true;
         }
         else {
             return false;
         }
+        return;
     }
 
-    public String printProductDetails() {
+    public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
         try {
             System.out.print("Length: ");
             double a = scanner.nextDouble();
@@ -76,8 +78,7 @@ public class Product {
             System.out.print("Height: ");
             double c = scanner.nextDouble();
 
-            double area = Product.calculateArea(a, b, c);
-            System.out.println("Area of package orderd: " + area);
+            Product product = new Product((int) a, (int) b, (int) c);
 
             // Dimensions.printSize(area);
 
