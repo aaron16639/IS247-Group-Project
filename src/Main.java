@@ -1,5 +1,3 @@
-import SupplyChain.Product;
-
 import java.util.Scanner;
 
 public class Main {

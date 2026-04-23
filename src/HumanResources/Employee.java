@@ -28,7 +28,7 @@ public class Employee   {
         return department;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
@@ -56,7 +56,7 @@ public class Employee   {
     }
 
     public void displayInfo() {
-        System.out.println("Employee ID: " + employeeID)
+        System.out.println("Employee ID: " + employeeID);
         System.out.println("Name: " + name);
         System.out.println("Salary: $" + salary);
         System.out.println("PTO Days: " + PTODays);
