@@ -11,12 +11,10 @@ public class HRSystem {
     private Scanner scanner = new Scanner(System.in);
 
     public static void start() {
-        System.out.println("Welcome to the HR system.");
-
         int choice = -1;
 
         do {
-            // TODO: displayMainMenu();
+            displayMainMenu();
             // TODO: Accept input
 
             switch (choice) {
@@ -24,5 +22,9 @@ public class HRSystem {
             }
 
         } while (choice != 0);
+    }
+
+    public static void displayMainMenu() {
+        System.out.println("Welcome to the HR system.");
     }
 }
