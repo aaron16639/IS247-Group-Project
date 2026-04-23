@@ -1,3 +1,5 @@
+import SupplyChain.Product;
+
 import java.util.Scanner;
 
 public class Main {
@@ -20,7 +22,9 @@ public class Main {
         }
 
         input.close();
+
     }
+
 
     public static void printOptions() {
         System.out.println("1. CRM");
