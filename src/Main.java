@@ -1,3 +1,4 @@
+import Finance.FinanceSystem;
 import HumanResources.HRSystem;
 
 import java.util.Scanner;
@@ -14,7 +15,7 @@ public class Main {
         if (choice == 1) {
             System.out.println("You have chosen choice 1");
         } else if (choice == 2) {
-            System.out.println("You have chosen choice 2");
+            FinanceSystem.start();
         } else if (choice == 3) {
             HRSystem.start();
         } else if (choice == 4) {
