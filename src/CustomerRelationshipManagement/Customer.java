@@ -65,8 +65,12 @@ public class Customer {
         System.out.println("Customer Email: " + email);
         System.out.println("Customer Phone Number " + PhoneNumber);
         System.out.println("Customer Address: " + address);
+
+       //if the type of customer is missing it will show up as "Unspecified"
+       System.out.println("Customer Type: " +
+               (TypeOfCustomer == null || TypeOfCustomer.isEmpty() ? "Unspecified" : TypeOfCustomer));
    }
 
-   //if the type of customer is missing it will show up as "Unspecified"
+
 
 }
