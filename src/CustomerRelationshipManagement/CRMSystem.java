@@ -5,13 +5,13 @@ import java.util.*;
 public class CRMSystem {
 
 //Stores all the Customers
-private final List<Customer> customers = new ArrayList<>();
+private static final List<Customer> customers = new ArrayList<>();
 
 //User input
-private final Scanner scan = new Scanner(System.in);
+private static final Scanner scan = new Scanner(System.in);
 
 //The menu for user to interact with
-public void Menu(){
+public static void Menu(){
     int selection;
 
     do{
@@ -42,11 +42,11 @@ public void Menu(){
         }
 
 
-    } while (selection != 0);
+    } while (selection != 8);
 }
 
 //Checks to see if the user enter a valid number
-private int ReadSelection(){
+private static int ReadSelection(){
 while(!scan.hasNextInt()){
     System.out.print("Enter a valid number from the selection menu");
     scan.next();
@@ -57,7 +57,7 @@ return num;
 }
 
 //Helps returns a customer if their ID matches
-private Customer findCustomer(String customerID){
+private static Customer findCustomer(String customerID){
     for (Customer c : customers){
         if(c.getCustomerID().equalsIgnoreCase(customerID)) {
             return c;
@@ -68,7 +68,7 @@ private Customer findCustomer(String customerID){
 
 
 //Method adds a new customer
-public void AddCustomer(){
+public static void AddCustomer(){
     System.out.println("Add new Customer");
 
     System.out.println("Customer ID: ");
@@ -101,7 +101,7 @@ public void AddCustomer(){
 }
 
 //Views all the customers in the list
-private void ViewCustomers(){
+private static void ViewCustomers(){
     System.out.println("Customer List: ");
 
     if(customers.isEmpty()){
@@ -117,7 +117,7 @@ private void ViewCustomers(){
 }
 
 //Search customer using ID
- private void SearchCustomerID(){
+ private static void SearchCustomerID(){
     System.out.println("Enter Customer ID: ");
     String customerID = scan.nextLine().trim();
 
@@ -132,7 +132,7 @@ private void ViewCustomers(){
  }
 
 //Search by partial or by their full name
- private void SearchCustomerByName(){
+ private static void SearchCustomerByName(){
     System.out.println("Enter full or partial name: ");
     String Names = scan.nextLine().trim().toLowerCase();
 
@@ -156,7 +156,7 @@ private void ViewCustomers(){
  }
 
  //Updates the customer fields(Changes only the non-empty inputs)
- private void UpdateCustomer(){
+ private static void UpdateCustomer(){
     System.out.println("Enter Customer ID to update: ");
     String customerID = scan.nextLine().trim();
 
@@ -196,7 +196,7 @@ private void ViewCustomers(){
  }
 
  //Deletes a customer from the list
- private void deleteCustomer(){
+ private static void deleteCustomer(){
     System.out.println("Enter Customer ID to delete: ");
     String customerID = scan.nextLine().trim();
 
@@ -213,7 +213,7 @@ private void ViewCustomers(){
     System.out.println("Is this the customer you want to delete? (y/n):");
     String ConfirmDeletion = scan.nextLine().trim().toLowerCase();
 
-    if(ConfirmDeletion.equals("y") || ConfirmDeletion.equals("n")){
+    if(ConfirmDeletion.equals("y")){
         customers.remove(customer);
         System.out.println("Customer deleted");
     } else {
@@ -222,7 +222,7 @@ private void ViewCustomers(){
  }
 
  //Shows the summary about the customers
- private void Summary(){
+ private static void Summary(){
     System.out.println("Customer Summary");
     System.out.println("Total number of customers: " + customers.size());
 

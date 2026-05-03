@@ -8,23 +8,41 @@ import java.util.Scanner;
 
 public class HRSystem {
     private final List<Employee> employees = new ArrayList<>();
-    private Scanner scanner = new Scanner(System.in);
+
 
     public static void start() {
-        int choice = -1;
+
+        int choice;
 
         do {
             displayMainMenu();
-            // TODO: Accept input
+            Scanner scanner = new Scanner(System.in);
+            choice = scanner.nextInt();
 
             switch (choice) {
-                // TODO: Craft choices
+                case 1:
+                    System.out.println("Nice choice!");
+                    return;
+                case 2:
+                    System.out.println("Nice choice!");
+                    return;
+                case 3:
+                    System.out.println("Nice choice!");
+                    return;
+                case 4:
+                    System.out.println("Nice choice!");
+                    return;
+                // TODO: Craft real choices
             }
-
+            scanner.close();
         } while (choice != 0);
     }
 
     public static void displayMainMenu() {
-        System.out.println("Welcome to the HR system.");
+        System.out.println("Welcome to the HR system. Please select a choice.");
+        System.out.println("1. Choice one");
+        System.out.println("2. Choice two");
+        System.out.println("3. Choice three");
+        System.out.println("4. Choice four");
     }
 }
