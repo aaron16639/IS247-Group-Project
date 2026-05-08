@@ -4,6 +4,53 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SupplyChain {
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void start() {
+        int choice = -1;
+        do {
+            System.out.println("\nSupply Chain Menu:");
+            System.out.println("1. Calculate Package Size");
+            System.out.println("0. Return to Main Menu");
+
+            try {
+                choice = Integer.parseInt(scanner.nextLine().trim());
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid number.");
+                continue;
+            }
+
+            switch (choice) {
+                case 1 -> calculatePackageSize();
+                case 0 -> System.out.println("Returning to main menu...");
+                default -> System.out.println("Invalid choice. Please try again.");
+            }
+        } while (choice != 0);
+    }
+
+    private static void calculatePackageSize() {
+        try {
+            System.out.print("Length: ");
+            double a = Double.parseDouble(scanner.nextLine().trim());
+
+            System.out.print("Width: ");
+            double b = Double.parseDouble(scanner.nextLine().trim());
+
+            System.out.print("Height: ");
+            double c = Double.parseDouble(scanner.nextLine().trim());
+
+            double area = SupplyChain.calculateArea(a, b, c);
+            System.out.println("Volume of package ordered: " + area);
+
+            Dimensions.printSize(area);
+
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter a number.");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     public static <T extends Number> double calculateArea(T a, T b, T c) {
         double length = a.doubleValue();
         double width = b.doubleValue();
@@ -39,9 +86,8 @@ class Dimensions {
 
 class MainApp {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        try {
+        try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("Length: ");
             double a = scanner.nextDouble();
 
@@ -60,8 +106,6 @@ class MainApp {
             System.out.println("Invalid Input");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
-        } finally {
-            scanner.close();
         }
     }
 }

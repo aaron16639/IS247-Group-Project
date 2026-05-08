@@ -1,5 +1,11 @@
 package Finance;
 
+import HumanResources.Contractor;
+import HumanResources.Employee;
+import HumanResources.FullTimeEmployee;
+import HumanResources.HRSystem;
+import HumanResources.PartTimeEmployee;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -63,18 +69,58 @@ public class FinanceSystem {
     }
 
     private static void addPayroll() {
-        System.out.print("Transaction ID: ");
-        String id = scanner.nextLine();
         System.out.print("Employee ID: ");
-        String empId = scanner.nextLine();
-        System.out.print("Hours worked: ");
-        double hours = Double.parseDouble(scanner.nextLine());
-        System.out.print("Hourly rate: ");
-        double rate = Double.parseDouble(scanner.nextLine());
+        String empId = scanner.nextLine().trim();
+
+        Employee emp = HRSystem.findEmployee(empId);
+        if (emp == null) {
+            System.out.println("No employee found with ID \"" + empId + "\" in HR system.");
+            return;
+        }
+
+        double hours;
+        double rate;
+
+        if (emp instanceof FullTimeEmployee ft) {
+            hours = 160.0;
+            rate = ft.getAnnualSalary() / 12.0 / 160.0;
+            System.out.printf("Employee: %s (Full-Time) — Monthly payroll: $%.2f (160 hrs @ $%.2f/hr)%n",
+                    ft.getName(), ft.getAnnualSalary() / 12.0, rate);
+        } else if (emp instanceof PartTimeEmployee pt) {
+            System.out.printf("Employee: %s (Part-Time) — HR hourly rate: $%.2f%n", pt.getName(), pt.getHourlyRate());
+            System.out.print("Use HR rate? (y/n): ");
+            String useHR = scanner.nextLine().trim();
+            if (useHR.equalsIgnoreCase("y")) {
+                rate = pt.getHourlyRate();
+            } else {
+                System.out.print("Enter hourly rate: ");
+                rate = Double.parseDouble(scanner.nextLine().trim());
+            }
+            System.out.print("Hours worked: ");
+            hours = Double.parseDouble(scanner.nextLine().trim());
+        } else if (emp instanceof Contractor c) {
+            System.out.printf("Employee: %s (Contractor) — HR hourly rate: $%.2f%n", c.getName(), c.getHourlyRate());
+            System.out.print("Use HR rate? (y/n): ");
+            String useHR = scanner.nextLine().trim();
+            if (useHR.equalsIgnoreCase("y")) {
+                rate = c.getHourlyRate();
+            } else {
+                System.out.print("Enter hourly rate: ");
+                rate = Double.parseDouble(scanner.nextLine().trim());
+            }
+            System.out.print("Hours worked: ");
+            hours = Double.parseDouble(scanner.nextLine().trim());
+        } else {
+            System.out.println("Unknown employee type.");
+            return;
+        }
+
+        System.out.print("Transaction ID: ");
+        String id = scanner.nextLine().trim();
 
         Payroll payroll = new Payroll(id, LocalDate.now(), empId, hours, rate);
         transactions.add(payroll);
-        System.out.println("Payroll entry added.");
+        System.out.printf("Payroll entry added for %s — $%.2f gross.%n", emp.getName(), hours * rate);
     }
 
     private static void addCustomerPayment() {
@@ -99,6 +145,10 @@ public class FinanceSystem {
         for (Transaction t : transactions) {
             System.out.println(t.getDetails());
         }
+    }
+
+    public static void addTransaction(Transaction t) {
+        transactions.add(t);
     }
 
     private static void processAllTransactions() {

@@ -2,7 +2,9 @@
 
 package CustomerRelationshipManagement;
 
-public class Customer {
+import Common.DetailsDisplayable;
+
+public class Customer implements DetailsDisplayable {
 
     private String customerID; //String for the Type of customer ID
     private String name;  //String for name of customer
@@ -20,6 +22,11 @@ public class Customer {
         this.PhoneNumber = PhoneNumber;
         this.address = address;
         this.TypeOfCustomer = TypeOfCustomer;
+    }
+
+    // Overloaded constructor — TypeOfCustomer defaults to "Unspecified"
+    public Customer(String customerID, String name, String email, String PhoneNumber, String address) {
+        this(customerID, name, email, PhoneNumber, address, "Unspecified");
     }
 
     //Getters
@@ -59,7 +66,8 @@ public class Customer {
     public void setTypeOfCustomer(String TypeOfCustomer){this.TypeOfCustomer = TypeOfCustomer;}
 
     //Prints out the customers information
-   public void PrintInfo(){
+   @Override
+   public void displayInfo(){
         System.out.println("Customer ID: " + customerID);
         System.out.println("Customer Name: " + name);
         System.out.println("Customer Email: " + email);
@@ -72,5 +80,10 @@ public class Customer {
    }
 
 
+    @Override
+    public String toString() {
+        String type = (TypeOfCustomer == null || TypeOfCustomer.isEmpty()) ? "Unspecified" : TypeOfCustomer;
+        return "[" + customerID + "] " + name + " - " + type;
+    }
 
 }

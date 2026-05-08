@@ -23,7 +23,7 @@ public static void Menu(){
         System.out.println("5. Update Customer");
         System.out.println("6. Delete Customer ");
         System.out.println("7. View Customer Summary");
-        System.out.println("8. Return to the Main Menu");
+        System.out.println("0. Return to the Main Menu");
         System.out.println("Enter Selection:");
 
         //Reads only valid Selection Integers
@@ -37,12 +37,12 @@ public static void Menu(){
             case 5 -> UpdateCustomer();
             case 6 -> deleteCustomer();
             case 7 -> Summary();
-            case 8 -> System.out.println("Returning to ERP Menu...");
+            case 0 -> System.out.println("Returning to ERP Menu...");
             default -> System.out.println("Invalid selection, please try again.");
         }
 
 
-    } while (selection != 8);
+    } while (selection != 0);
 }
 
 //Checks to see if the user enter a valid number
@@ -112,7 +112,7 @@ private static void ViewCustomers(){
     int index = 1;
     for(Customer c : customers){
         System.out.println("Customer #" + index++);
-        c.PrintInfo();//Show us details about the customer
+        c.displayInfo();//Show us details about the customer
     }
 }
 
@@ -127,7 +127,7 @@ private static void ViewCustomers(){
         System.out.println("Customer not found.");
     }else{
         System.out.println("Customer found");
-        customer.PrintInfo();
+        customer.displayInfo();
     }
  }
 
@@ -151,7 +151,7 @@ private static void ViewCustomers(){
 
      System.out.println("Matched Customers");
      for(Customer c : CustomerMatch){
-         c.PrintInfo();
+         c.displayInfo();
      }
  }
 
@@ -168,7 +168,7 @@ private static void ViewCustomers(){
     }
 
     System.out.println("Current Info:");
-    customer.PrintInfo();
+    customer.displayInfo();
 
     System.out.println("Leave it blank to keep the current value");
 
@@ -208,7 +208,7 @@ private static void ViewCustomers(){
     }
 
     System.out.println("Customer to be deleted: ");
-    customer.PrintInfo();
+    customer.displayInfo();
 
     System.out.println("Is this the customer you want to delete? (y/n):");
     String ConfirmDeletion = scan.nextLine().trim().toLowerCase();

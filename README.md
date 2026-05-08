@@ -1,15 +1,16 @@
-**Group Name**: ERP Group
+# ERP Group Project
 
-**Project Description**: This is a second-generation ERP system built for businesses and includes modules like finance, HR, Supply Chain Management (SCM), and more. The problems that this solves for small businesses is that they need a system that helps them organize all their businesses information in order to improve operational efficiency.
+## Problem Statement
 
-**Roles**:
+Small businesses struggle to manage their operations across multiple disconnected tools — tracking customers in spreadsheets, recording finances manually, and managing employees without a unified system. This fragmentation leads to inefficiency, data errors, and difficulty making informed decisions.
 
-    Developer/PM: Aaron Saudager
-    
-    Developer: Saunders Ebuwei
-    
-    Developer: Jakob Alokones
-    
-    Developer: Gavin Williams
-    
-    Developer: Mahir Ishtiaq
+This project is a second-generation Enterprise Resource Planning (ERP) system built for small businesses. It provides a single, integrated console application that brings together four core business functions: Customer Relationship Management (CRM), Finance, Human Resources (HR), and Supply Chain Management (SCM). By centralizing these operations, the system helps small businesses organize their data, streamline workflows, and improve overall operational efficiency.
+
+## Team Members
+
+| Name             | Role              | Module(s)                          |
+|------------------|-------------------|------------------------------------|
+| Aaron Saudager   | Developer / PM    | Human Resources, Common            |
+| Saunders Ebuwei  | Developer         | Customer Relationship Management   |
+| Jakob Alokones   | Developer         | Finance                            |
+| Gavin Williams   | Developer         | Supply Chain Management            |
