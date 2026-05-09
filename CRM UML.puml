@@ -1,0 +1,45 @@
+@startuml
+class CustomerRelationshipManagement.CRMSystem {
+- {static} List<Customer> customers
+- {static} Scanner scan
++ {static} void Menu()
+- {static} int ReadSelection()
+- {static} Customer findCustomer(String)
++ {static} void AddCustomer()
+- {static} void ViewCustomers()
+- {static} void SearchCustomerID()
+- {static} void SearchCustomerByName()
+- {static} void UpdateCustomer()
+- {static} void deleteCustomer()
+- {static} void Summary()
+}
+
+
+class CustomerRelationshipManagement.Customer {
+- String customerID
+- String name
+- String email
+- String PhoneNumber
+- String address
+- String TypeOfCustomer
++ String getCustomerID()
++ String getName()
++ String getEmail()
++ String getPhoneNumber()
++ String getAddress()
++ String getTypeOfCustomer()
++ void setCustomerID(String)
++ void setName(String)
++ void setEmail(String)
++ void setPhoneNumber(String)
++ void setAddress(String)
++ void setTypeOfCustomer(String)
++ void displayInfo()
++ String toString()
+}
+
+
+
+
+Common.DetailsDisplayable <|.. CustomerRelationshipManagement.Customer
+@enduml
