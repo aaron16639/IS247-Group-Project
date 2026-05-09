@@ -1,3 +1,5 @@
+// Gavin Williams
+
 package SupplyChain;
 
 import java.util.InputMismatchException;
@@ -6,6 +8,7 @@ import java.util.Scanner;
 public class SupplyChain {
     private static final Scanner scanner = new Scanner(System.in);
 
+    //Entry point into SupplyChain (Created by Aaron)
     public static void start() {
         int choice = -1;
         do {
