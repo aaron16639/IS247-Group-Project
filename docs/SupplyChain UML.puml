@@ -1,0 +1,18 @@
+@startuml
+class SupplyChain.SupplyChain {
+- {static} Scanner scanner
++ {static} void start()
+- {static} void calculatePackageSize()
++ {static} double calculateArea(T,T,T)
+}
+
+
+class SupplyChain.Dimensions {
++ {static} void printSize(double)
+}
+
+class SupplyChain.MainApp {
++ {static} void main(String[])
+}
+
+@enduml
