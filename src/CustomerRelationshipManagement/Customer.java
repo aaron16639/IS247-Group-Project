@@ -7,7 +7,7 @@ import Common.DetailsDisplayable;
 /**
  * This is the customer class that holds all information about the customer
  * And it implements the DetailsDisplayable interface from the common
- * package
+ * package that has the DetailsDisplayable interface
  */
 public class Customer implements DetailsDisplayable {
 
