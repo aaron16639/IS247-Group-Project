@@ -14,3 +14,6 @@ This project is a second-generation Enterprise Resource Planning (ERP) system bu
 | Saunders Ebuwei  | Developer         | Customer Relationship Management   |
 | Jakob Alokones   | Developer         | Finance                            |
 | Gavin Williams   | Developer         | Supply Chain Management            |
+
+## UML
+You can find UML diagrams of all packages in the /docs folder

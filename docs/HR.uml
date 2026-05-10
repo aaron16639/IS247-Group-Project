@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>HumanResources</OriginalElement>
+  <nodes>
+    <node x="-193.5" y="-204.0">HumanResources.HRSystem</node>
+    <node x="486.5" y="967.0">HumanResources.Contractor</node>
+    <node x="226.0" y="601.0">HumanResources.FullTimeEmployee</node>
+    <node x="-206.0" y="944.0">HumanResources.PartTimeEmployee</node>
+    <node x="-131.0" y="255.5">HumanResources.Employee</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="HumanResources.Contractor" target="HumanResources.Employee" relationship="GENERALIZATION">
+      <point x="0.0" y="-113.0" />
+      <point x="672.0" y="580.0" />
+      <point x="-8.0" y="580.0" />
+      <point x="0.0" y="124.5" />
+    </edge>
+    <edge source="HumanResources.PartTimeEmployee" target="HumanResources.Employee" relationship="GENERALIZATION">
+      <point x="0.0" y="-136.0" />
+      <point x="0.0" y="124.5" />
+    </edge>
+    <edge source="HumanResources.FullTimeEmployee" target="HumanResources.Employee" relationship="GENERALIZATION">
+      <point x="0.0" y="-159.0" />
+      <point x="432.0" y="580.0" />
+      <point x="-8.0" y="580.0" />
+      <point x="0.0" y="124.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.525" showDependencies="false" x="326.0" y="506.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
