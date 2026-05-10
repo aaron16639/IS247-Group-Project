@@ -13,7 +13,7 @@ import Common.DetailsDisplayable;
  * their type-specific details and {@link #calculatePay()} to compute their monthly
  * compensation.
  *
- * <p>This class implements {@code DetailsDisplayable} to enforce a consistent display
+ * <p>This class implements {@link DetailsDisplayable} to enforce a consistent display
  * contract across all employee types.
  *
  * @author IS247 Group Project Team
@@ -64,21 +64,21 @@ public abstract class Employee implements DetailsDisplayable {
     /**
      * Sets the employee's ID.
      *
-     * @param employeeID the new employee ID; must be non-null and non-empty
+     * @param employeeID the new employee ID; should be non-null and non-empty
      */
     public void setEmployeeID(String employeeID) { this.employeeID = employeeID; }
 
     /**
      * Sets the employee's full name.
      *
-     * @param name the new name; must be non-null and non-empty
+     * @param name the new name; should be non-null and non-empty
      */
     public void setName(String name) { this.name = name; }
 
     /**
      * Sets the department for this employee.
      *
-     * @param department the new department name; must be non-null and non-empty
+     * @param department the new department name; should be non-null and non-empty
      */
     public void setDepartment(String department) { this.department = department; }
 
@@ -98,7 +98,7 @@ public abstract class Employee implements DetailsDisplayable {
      * <ul>
      *   <li>{@link FullTimeEmployee}: {@code annualSalary / 12}</li>
      *   <li>{@link PartTimeEmployee}: {@code hourlyRate * maxHoursPerWeek * 4}</li>
-     *   <li>{@link Contractor}: returns the base {@code hourlyRate}</li>
+     *   <li>{@link Contractor}: returns the base {@code hourlyRate} — callers must multiply by hours worked for actual pay</li>
      * </ul>
      *
      * @return the estimated monthly compensation as a {@code double}
