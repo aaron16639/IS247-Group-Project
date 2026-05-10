@@ -81,9 +81,9 @@ public class FullTimeEmployee extends Employee {
     public void setBenefitsEligible(boolean benefitsEligible) { this.benefitsEligible = benefitsEligible; }
 
     /**
-     * Displays full employee details including annual salary to standard output.
+     * Displays full employee details, including annual salary, to standard output.
      *
-     * <p>Equivalent to calling {@link #displayInfo(boolean) displayInfo(true)}.
+     * <p>To suppress the salary field, use {@link #displayInfo(boolean) displayInfo(false)}.
      */
     @Override
     public void displayInfo() {
@@ -134,7 +134,7 @@ public class FullTimeEmployee extends Employee {
      *
      * <p>Computed as {@code (annualSalary / 12) * months}.
      *
-     * @param months the number of months to project; should be {@code > 0}
+     * @param months the number of months to project; negative values produce negative results
      * @return the projected gross pay in dollars for the specified period
      */
     public double calculatePay(int months) {
@@ -144,7 +144,7 @@ public class FullTimeEmployee extends Employee {
     /**
      * Returns a concise string representation of this full-time employee.
      *
-     * <p>Format: {@code [ID] Name | Dept | Monthly Pay: $X.XX}
+     * <p>Format: {@code [ID] Name - Full-Time | Dept: Department | Monthly Pay: $X.XX}
      *
      * @return a formatted summary string
      */
