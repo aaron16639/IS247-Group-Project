@@ -28,6 +28,9 @@ public class HRSystem {
     private static final List<Employee> employees = new ArrayList<>();
     private static final Scanner scanner = new Scanner(System.in);
 
+    /** Not instantiable — all members are static. */
+    private HRSystem() {}
+
     /**
      * Launches the HR system and runs the main interactive menu loop.
      *
