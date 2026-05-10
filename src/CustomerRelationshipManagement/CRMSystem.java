@@ -72,7 +72,7 @@ public static void AddCustomer(){
     System.out.println("Add new Customer");
 
     System.out.println("Customer ID: ");
-    String customerID = scan.nextLine();
+    String customerID = scan.nextLine().trim();
 
     if(findCustomer(customerID) != null){
         System.out.println("A customer with that ID is already in our System. Please use a different ID");
@@ -80,19 +80,19 @@ public static void AddCustomer(){
     }
 
     System.out.println("Name: ");
-    String name = scan.nextLine();
+    String name = scan.nextLine().trim();
 
     System.out.println("Email: ");
-    String email = scan.nextLine();
+    String email = scan.nextLine().trim();
 
     System.out.println("Phone Number: ");
-    String PhoneNumber = scan.nextLine();
+    String PhoneNumber = scan.nextLine().trim();
 
     System.out.println("Address: ");
-    String address = scan.nextLine();
+    String address = scan.nextLine().trim();
 
     System.out.println("Type of Customer (e.g., Regular, VIP, Corporate, etc)");
-    String TypeOfCustomer = scan.nextLine();
+    String TypeOfCustomer = scan.nextLine().trim();
 
     //Stores the new Customer
     Customer newCustomer = new Customer(customerID, name, email, PhoneNumber, address, TypeOfCustomer);
@@ -170,25 +170,25 @@ private static void ViewCustomers(){
     System.out.println("Current Info:");
     customer.displayInfo();
 
-    System.out.println("Leave it blank to keep the current value");
+    System.out.println("\nLeave it blank to keep the current value");
 
-    System.out.println("New name: ");
+    System.out.println("New name:(leave blank to keep) ");
     String name = scan.nextLine();
     if(!name.isEmpty()) customer.setName(name.trim());
 
-    System.out.println("New email: ");
+    System.out.println("New email:(leave blank to keep) ");
     String email = scan.nextLine();
     if(!email.isEmpty()) customer.setEmail(email.trim());
 
-    System.out.println("New Phone Number: ");
+    System.out.println("New Phone Number:(leave blank to keep) ");
     String PhoneNumber = scan.nextLine();
     if(!PhoneNumber.isEmpty()) customer.setPhoneNumber(PhoneNumber.trim());
 
-    System.out.println("New Address: ");
+    System.out.println("New Address:(leave blank to keep) ");
     String address = scan.nextLine();
     if(address.isEmpty()) customer.setAddress(address.trim());
 
-    System.out.println("New Customer Type");
+    System.out.println("New Customer Type (leave blank to keep)");
     String TypeOfCustomer = scan.nextLine();
     if(!TypeOfCustomer.isEmpty()) customer.setTypeOfCustomer(TypeOfCustomer.trim());
 
