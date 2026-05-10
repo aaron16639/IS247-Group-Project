@@ -90,7 +90,7 @@ public class HRSystem {
     /**
      * Searches the employee roster for the employee with the given ID.
      *
-     * @param id the employee ID to search for (case-sensitive)
+     * @param id the employee ID to search for (case-insensitive)
      * @return the matching {@link Employee}, or {@code null} if no employee with
      *         that ID exists in the roster
      */
