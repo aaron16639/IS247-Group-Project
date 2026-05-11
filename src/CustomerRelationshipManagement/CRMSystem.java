@@ -17,7 +17,7 @@ private static final List<Customer> customers = new ArrayList<>();
 //User input
 
     /**
-     * Scanner for Input
+     * Scanner for User Input
       */
 private static final Scanner scan = new Scanner(System.in);
 
