@@ -11,10 +11,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Console-based controller for the Human Resources management system.
+ *
+ * <p>This class owns the application's employee roster (an in-memory
+ * {@link java.util.List}) and drives an interactive menu loop that lets the user
+ * add, view, search, update, and remove employees, run payroll, and view summary
+ * reports.
+ *
+ * <p>All methods are {@code static}; this class is not intended to be instantiated.
+ *
+ * @author IS247 Group Project Team
+ * @version 1.0
+ */
 public class HRSystem {
     private static final List<Employee> employees = new ArrayList<>();
     private static final Scanner scanner = new Scanner(System.in);
 
+    /** Not instantiable — all members are static. */
+    private HRSystem() {}
+
+    /**
+     * Launches the HR system and runs the main interactive menu loop.
+     *
+     * <p>This is the single entry point for the HR module. The loop continues until
+     * the user selects the exit option from the menu.
+     */
     public static void start() {
         int choice;
 
@@ -45,6 +67,13 @@ public class HRSystem {
         } while (choice != 0);
     }
 
+    /**
+     * Prints the main menu options to standard output.
+     *
+     * <p>Menu items correspond to the numbered choices the user can enter, including
+     * add employee, view all, search, update, remove, process payroll, HR summary,
+     * PTO report, and exit.
+     */
     public static void displayMainMenu() {
         System.out.println("\n--- HR System ---");
         System.out.println("1.  Add Employee");
@@ -61,6 +90,13 @@ public class HRSystem {
         System.out.print("Enter choice: ");
     }
 
+    /**
+     * Searches the employee roster for the employee with the given ID.
+     *
+     * @param id the employee ID to search for (case-insensitive)
+     * @return the matching {@link Employee}, or {@code null} if no employee with
+     *         that ID exists in the roster
+     */
     public static Employee findEmployee(String id) {
         for (Employee e : employees) {
             if (e.getEmployeeID().equalsIgnoreCase(id)) {
