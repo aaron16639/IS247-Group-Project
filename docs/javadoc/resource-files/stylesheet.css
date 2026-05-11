@@ -86,6 +86,7 @@
     /* Colors for invalid tag notifications */
     --invalid-tag-background-color: #ffe6e6;
     --invalid-tag-text-color: #000000;
+    --source-linenumber-color: green;
     /* Navigation bar dimensions */
     --top-nav-height: 44px;
     --sub-nav-height: 36px;
