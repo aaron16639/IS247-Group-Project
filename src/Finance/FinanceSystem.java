@@ -11,11 +11,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Entry point for the Finance module. Manages all transactions and
+ * provides a console menu for adding and processing them.
+ * Integrates with the HR module to look up employee data for payroll.
+ */
 public class FinanceSystem {
 
     private static final List<Transaction> transactions = new ArrayList<>();
     private static final Scanner scanner = new Scanner(System.in);
 
+    /** Launches the Finance module menu. Loops until user selects 0. */
     public static void start() {
         int choice = -1;
 
@@ -41,6 +47,7 @@ public class FinanceSystem {
         } while (choice != 0);
     }
 
+    /** Prints the Finance module menu to the console. */
     private static void displayMainMenu() {
         System.out.println("\n--- Finance System ---");
         System.out.println("1. Add Invoice");
@@ -52,6 +59,7 @@ public class FinanceSystem {
         System.out.print("Choice: ");
     }
 
+    /** Prompts for invoice details and adds it to the transaction list. */
     private static void addInvoice() {
         System.out.print("Transaction ID: ");
         String id = scanner.nextLine();
@@ -68,6 +76,11 @@ public class FinanceSystem {
         System.out.println("Invoice added.");
     }
 
+    /**
+     * Looks up an employee in the HR system and creates a payroll entry based on
+     * their type. Full-time employees use a calculated monthly rate. Part-time
+     * and contractors prompt for hours worked and optionally override the HR rate.
+     */
     private static void addPayroll() {
         System.out.print("Employee ID: ");
         String empId = scanner.nextLine().trim();
@@ -123,6 +136,7 @@ public class FinanceSystem {
         System.out.printf("Payroll entry added for %s — $%.2f gross.%n", emp.getName(), hours * rate);
     }
 
+    /** Prompts for customer payment details and adds it to the transaction list. */
     private static void addCustomerPayment() {
         System.out.print("Transaction ID: ");
         String id = scanner.nextLine();
@@ -136,6 +150,7 @@ public class FinanceSystem {
         System.out.println("Customer payment recorded.");
     }
 
+    /** Prints details of all recorded transactions. */
     private static void viewAllTransactions() {
         if (transactions.isEmpty()) {
             System.out.println("No transactions on record.");
@@ -147,10 +162,17 @@ public class FinanceSystem {
         }
     }
 
+    /**
+     * Adds a transaction directly to the list without user input.
+     * Intended for use by other modules passing transactions into Finance.
+     *
+     * @param t the transaction to add
+     */
     public static void addTransaction(Transaction t) {
         transactions.add(t);
     }
 
+    /** Processes all recorded transactions. */
     private static void processAllTransactions() {
         if (transactions.isEmpty()) {
             System.out.println("No transactions to process.");

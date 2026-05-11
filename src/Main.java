@@ -5,6 +5,10 @@ import SupplyChain.SupplyChain;
 
 import java.util.Scanner;
 
+/**
+ * Entry point for the ERP system. Displays the main menu and
+ * routes the user to the appropriate module.
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -34,6 +38,13 @@ public class Main {
         input.close();
     }
 
+    /**
+     * Reads and validates an integer choice from the user.
+     * Loops until a valid integer is entered.
+     *
+     * @param input the shared Scanner instance
+     * @return the validated integer choice
+     */
     private static int readChoice(Scanner input) {
         while (!input.hasNextInt()) {
             System.out.println("Invalid selection, please try again.");
@@ -44,6 +55,7 @@ public class Main {
         return choice;
     }
 
+    /** Prints the main ERP module selection menu to the console. */
     public static void printOptions() {
         System.out.println("Please select a choice:");
         System.out.println("1. CRM");
