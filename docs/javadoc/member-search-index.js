@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"SupplyChain","c":"SupplyChain","l":"calculateArea(T, T, T)","u":"calculateArea(T,T,T)","k":"6"},{"p":"SupplyChain","c":"SupplyChain","l":"start()","k":"6"},{"p":"SupplyChain","c":"SupplyChain","l":"SupplyChain()","u":"%3Cinit%3E()","k":"3"}];updateSearchResults();

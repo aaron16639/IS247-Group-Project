@@ -1,10 +1,19 @@
 // Gavin Williams
 
+/*
+ * Declares the namespace package
+ */
 package SupplyChain;
 
+/*
+ * These allow the exception and scanner to be able to work
+ */
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/*
+ * Declares the public class SupplyChain
+ */
 public class SupplyChain {
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -31,6 +40,11 @@ public class SupplyChain {
         } while (choice != 0);
     }
 
+    /*
+     * These print out the text for the dimensions of the packages.
+     * Determines if the input is acceptable or not and returns the output "Invalid Input"
+     * when not accepted with the use of an exception.
+     */
     private static void calculatePackageSize() {
         try {
             System.out.print("Length: ");
@@ -54,6 +68,12 @@ public class SupplyChain {
         }
     }
 
+    /*
+     * Allows inputs for the dimensions to be scanned.
+     * Uses an if statement to determine if an exception needs to be thrown.
+     * @throws IllegalArgumentException when dimensions have invalid inputs
+     * @return all the dimensions multiplied together
+     */
     public static <T extends Number> double calculateArea(T a, T b, T c) {
         double length = a.doubleValue();
         double width = b.doubleValue();
@@ -66,6 +86,11 @@ public class SupplyChain {
     }
 }
 
+/*
+ * Declares the public class Dimensions.
+ * Determines if the sizes of the packages are greater than 300 or less than 50.
+ * @param area the volume of the package used to determine size category
+ */
 class Dimensions {
 
     public static void printSize(double area) {
@@ -87,10 +112,16 @@ class Dimensions {
     }
 }
 
+/*
+ * Declares the public class MainApp.
+ */
 class MainApp {
     public static void main(String[] args) {
 
         try (Scanner scanner = new Scanner(System.in)) {
+            /*
+             * These print out the text for the dimensions of the packages.
+             */
             System.out.print("Length: ");
             double a = scanner.nextDouble();
 
@@ -100,11 +131,21 @@ class MainApp {
             System.out.print("Height: ");
             double c = scanner.nextDouble();
 
+            /*
+             * Multiplies the width, height and length of the package and returns the volume.
+             */
             double area = SupplyChain.calculateArea(a, b, c);
             System.out.println("Area of package orderd: " + area);
 
+            /*
+             * Below allows the area to be printed out.
+             */
             Dimensions.printSize(area);
 
+            /*
+             * Determines if the input is acceptable or not and returns "Invalid Input"
+             * when not accepted with the use of an exception.
+             */
         } catch (InputMismatchException e) {
             System.out.println("Invalid Input");
         } catch (IllegalArgumentException e) {
