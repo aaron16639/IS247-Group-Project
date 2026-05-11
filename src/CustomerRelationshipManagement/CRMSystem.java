@@ -2,15 +2,31 @@ package CustomerRelationshipManagement;
 
 import java.util.*;
 
+/**
+ * CRM System class holds the methods for the Customer
+ * Relationship Management System
+ */
 public class CRMSystem {
 
 //Stores all the Customers
+    /**
+     * ArrayList that holds customer
+     */
 private static final List<Customer> customers = new ArrayList<>();
 
 //User input
+
+    /**
+     * Scanner for Input
+      */
 private static final Scanner scan = new Scanner(System.in);
 
 //The menu for user to interact with
+
+    /**
+     * Method for the CRM menu that allows the user
+     * to select what the user wanted to do
+      */
 public static void Menu(){
     int selection;
 
@@ -46,6 +62,14 @@ public static void Menu(){
 }
 
 //Checks to see if the user enter a valid number
+
+    /**
+     * Method that is used for selecting the number from the menu
+     * selecting a number that isn't a vaild number from the selection menu
+     * will ask you to enter a vaild number from
+     *
+      * @return returns the number input
+     */
 private static int ReadSelection(){
 while(!scan.hasNextInt()){
     System.out.print("Enter a valid number from the selection menu");
@@ -57,6 +81,12 @@ return num;
 }
 
 //Helps returns a customer if their ID matches
+
+    /**
+     * Method for finding a customer that is already in the system
+      * @param customerID Holds the Customer unique ID
+     * @return null
+     */
 private static Customer findCustomer(String customerID){
     for (Customer c : customers){
         if(c.getCustomerID().equalsIgnoreCase(customerID)) {
@@ -68,6 +98,9 @@ private static Customer findCustomer(String customerID){
 
 
 //Method adds a new customer
+    /**
+     * Method for adding Customers into the System
+      */
 public static void AddCustomer(){
     System.out.println("Add new Customer");
 
@@ -101,6 +134,10 @@ public static void AddCustomer(){
 }
 
 //Views all the customers in the list
+
+    /**
+     * Method for viewing a customer in the system
+      */
 private static void ViewCustomers(){
     System.out.println("Customer List: ");
 
@@ -117,6 +154,10 @@ private static void ViewCustomers(){
 }
 
 //Search customer using ID
+
+    /**
+     * Method for searching a Customers ID
+      */
  private static void SearchCustomerID(){
     System.out.println("Enter Customer ID: ");
     String customerID = scan.nextLine().trim();
@@ -132,6 +173,10 @@ private static void ViewCustomers(){
  }
 
 //Search by partial or by their full name
+
+    /**
+     * Method for searching for a Customer by name
+      */
  private static void SearchCustomerByName(){
     System.out.println("Enter full or partial name: ");
     String Names = scan.nextLine().trim().toLowerCase();
@@ -156,6 +201,11 @@ private static void ViewCustomers(){
  }
 
  //Updates the customer fields(Changes only the non-empty inputs)
+
+    /**
+     * Method for Updating a Customer name, address, phone number
+     * Email, ID, and the type of customer
+      */
  private static void UpdateCustomer(){
     System.out.println("Enter Customer ID to update: ");
     String customerID = scan.nextLine().trim();
@@ -196,6 +246,10 @@ private static void ViewCustomers(){
  }
 
  //Deletes a customer from the list
+
+    /**
+     * Method for deleting a customer
+     */
  private static void deleteCustomer(){
     System.out.println("Enter Customer ID to delete: ");
     String customerID = scan.nextLine().trim();
@@ -222,6 +276,10 @@ private static void ViewCustomers(){
  }
 
  //Shows the summary about the customers
+
+    /**
+     * Method for displaying a Customer Summary
+      */
  private static void Summary(){
     System.out.println("Customer Summary");
     System.out.println("Total number of customers: " + customers.size());
