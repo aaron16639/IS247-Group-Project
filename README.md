@@ -17,3 +17,6 @@ This project is a second-generation Enterprise Resource Planning (ERP) system bu
 
 ## UML
 You can find UML diagrams of all packages in the /docs folder
+
+## JavaDocs
+JavaDocs are accessible at https://aaron16639.github.io/IS247-Group-Project/javadoc/index.html
